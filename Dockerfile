@@ -1,5 +1,5 @@
-# Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.2
+# Base image: Ruby version compatible with the locked Jekyll/Liquid stack
+FROM ruby:3.1
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -21,8 +21,8 @@ RUN chown -R vscode:vscode /usr/src/app
 # Switch to the non-root user
 USER vscode
 
-# Copy Gemfile into the container (necessary for `bundle install`)
-COPY Gemfile ./
+# Copy Ruby dependency manifests so Bundler installs the locked versions
+COPY Gemfile Gemfile.lock ./
 
 
 
@@ -31,5 +31,5 @@ RUN gem install connection_pool:2.5.0
 RUN gem install bundler:2.3.26
 RUN bundle install
 
-# Command to serve the Jekyll site
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]
+# Command to serve the Jekyll site with the bundle-locked dependency set
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]

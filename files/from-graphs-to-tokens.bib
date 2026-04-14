@@ -1,0 +1,14 @@
+@article{WANG2026104771,
+title = {From graphs to tokens: Substructure-aware molecular representation for large language models},
+journal = {Information Processing & Management},
+volume = {63},
+number = {6},
+pages = {104771},
+year = {2026},
+issn = {0306-4573},
+doi = {https://doi.org/10.1016/j.ipm.2026.104771},
+url = {https://www.sciencedirect.com/science/article/pii/S0306457326001627},
+author = {Runze Wang and Zijie Xing and Xingyue Liu and Mingqi Yang and Che He and Yanming Shen},
+keywords = {Substructure-aware tokenization, Molecular graph, Large language models, Substructure token embedding, Substructure token alignment},
+abstract = {Enabling large language models (LLMs) to process graph-structured data holds significant potential for advancing molecular research, especially in tasks related to molecular structure analysis and understanding. However, a key challenge remains in effectively tokenizing molecular graphs to align with the capabilities of LLMs. To bridge the gap, this paper proposes SubStructure-aware Tokenization (S2Token) that fragments molecules into chemically meaningful, reusable substructures. The key idea is to generate semantically enriched substructure token embeddings and represent the complex relationships between tokens in the LLM embedding space, allowing LLMs to learn and generalize chemical patterns effectively. To achieve this, S2Token begins by decomposing molecular graphs based on frequency and functionality to build a vocabulary. Then, we establish a dual-view token embedding method that jointly encodes fine-grained structural and functional attributes of molecular substructures. Furthermore, we propose an efficient token alignment strategy to associate the dependencies between non-sequential substructures with the LLM token embedding space. In this way, our method activates the LLMs’ generalization ability to unseen molecular graphs. To evaluate this, we curate four task-specific molecular datasets designed to investigate generalization. Extensive experiments on three standard benchmarks and four curated datasets demonstrate that S2Token consistently yields substantial performance improvements. On the molecular caption benchmark, S2Token achieves a 12.6% average performance gain across six metrics, outperforming the best LLM-based method. For forward reaction and retrosynthesis tasks, it enhances fingerprint similarity for synthesized molecules by 6.6% and 8.6%, respectively. Moreover, S2Token shows advantages on four generalist evaluation tasks, including 9.7% and 3.0% reductions in MAE on the molecular property prediction task, compared to graph- and node-centric tokenization methods. Code is available at https://github.com/GraphMoLab/S2Token.}
+}
