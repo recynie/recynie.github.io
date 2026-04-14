@@ -11,14 +11,6 @@ I am an undergraduate student majoring in Artificial Intelligence at Dalian Univ
 
 I also write on my [personal blog](https://recynie.github.io/blog/) and keep notes in my [personal wiki](https://metaphor-xennon.pages.dev/).
 
-Education
-======
-
-- Dalian University of Technology, School of Future Technology
-- Undergraduate student in Artificial Intelligence, class of 2023
-- Weighted average: 92.3/100
-- Second-year academic rank: 4/63
-
 Research Interests
 ======
 
