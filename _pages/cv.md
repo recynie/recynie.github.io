@@ -51,8 +51,9 @@ Research experience
 
 - Extract structured crystallization conditions from free-text Protein Data Bank records with large language models.
 - Curated a high-quality protein sub-database with roughly 7,000 entries that contain both complete crystallization conditions and structural information.
-- Built graph convolutional models to predict major crystallization variables, including PEG concentration and polymerization degree.
-- Currently exploring how hydration information can be incorporated into protein embedding models.
+- Built graph neural network models to predict major crystallization variables, including PEG concentration and polymerization degree.
+- Studied hydration-aware protein representations that go beyond sequence, structure, and coarse electrostatic descriptors.
+- Currently exploring surface hydration-guided protein design through representation learning and preference optimization.
 
 ### Oct. 2024 - Dec. 2024
 

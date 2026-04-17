@@ -19,6 +19,12 @@ main:
     
   - title: "Projects"
     url: /portfolio/
+
+  - title: "Blog"
+    url: https://recynie.github.io/blog/
+
+  - title: "Wiki"
+    url: https://metaphor-xennon.pages.dev/
     
   - title: "CV"
     url: /cv/
