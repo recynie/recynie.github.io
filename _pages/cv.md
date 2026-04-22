@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-A PDF draft of my CV is available [here]({{ '/files/cv.pdf' | relative_url }}).
+PDF format of my CV is available: [Chinese version]({{ '/files/cv_CN.pdf' | relative_url }}).
 
 Education
 ======
