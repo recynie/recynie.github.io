@@ -9,7 +9,7 @@ venue: 'Information Processing & Management'
 slidesurl: 
 paperurl: 'https://recynie.github.io/files/from-graphs-to-tokens.pdf'
 bibtexurl: 'https://recynie.github.io/files/from-graphs-to-tokens.bib'
-citation: 'Runze Wang, Zijie Xing, *Xingyue Liu*, Mingqi Yang, Che He, Yanming Shen, “From Graphs to Tokens: Substructure-Aware Molecular Representation for Large Language Models,” <i>Information Processing and Management</i>, vol. 63, no. 6, p. 104771, Sep. 2026'
+citation: 'Runze Wang, Zijie Xing, Xingyue Liu, Mingqi Yang, Che He, Yanming Shen*, “From Graphs to Tokens: Substructure-Aware Molecular Representation for Large Language Models,” <i>Information Processing and Management</i>, vol. 63, no. 6, p. 104771, Sep. 2026'
 ---
 Abstract
 ======

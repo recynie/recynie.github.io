@@ -9,7 +9,7 @@ venue: 'ICLR 2026 Workshop on AI with Recursive Self-Improvement'
 slidesurl: 'https://recynie.github.io/files/language-guided-expertise-evolution-for-protein-optimization-poster.pdf'
 paperurl: 'https://recynie.github.io/files/language-guided-expertise-evolution-for-protein-optimization.pdf'
 bibtexurl: 'https://recynie.github.io/files/language-guided-expertise-evolution-for-protein-optimization.bib'
-citation: 'Xingyue Liu, Zijie Xing, Runze Wang, Luoming Hu, and Yanming Shen, “Language-guided expertise evolution for protein optimization,” <i>ICLR 2026 Workshop on AI with Recursive Self-Improvement</i>, 2026'
+citation: 'Xingyue Liu†, Zijie Xing†, Runze Wang, Luoming Hu, and Yanming Shen*, “Language-guided expertise evolution for protein optimization,” <i>ICLR 2026 Workshop on AI with Recursive Self-Improvement</i>, 2026'
 ---
 Abstract
 ======
