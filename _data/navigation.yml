@@ -23,10 +23,10 @@ main:
   - title: "CV"
     url: /cv/
     
-  - title: "Blog"
+  - title: "[Blog]"
     url: https://recynie.github.io/blog/
 
-  - title: "Wiki"
+  - title: "[Wiki]"
     url: https://metaphor-xennon.pages.dev/
     
   # - title: "CV"
