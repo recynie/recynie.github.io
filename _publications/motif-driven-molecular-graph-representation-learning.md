@@ -9,7 +9,7 @@ venue: 'Expert Systems with Applications'
 slidesurl: 
 paperurl: 'https://recynie.github.io/files/motif-driven-molecular-graph-representation-learning.pdf'
 bibtexurl: 'https://recynie.github.io/files/motif-driven-molecular-graph-representation-learning.bib'
-citation: 'Runze Wang, Yuting Ma, *Xingyue Liu*, Zijie Xing, and Yanming Shen*, “Motif-driven molecular graph representation learning,” <i>Expert Systems with Applications</i>, vol. 269, p. 126484, 2025'
+citation: 'Runze Wang, Yuting Ma, Xingyue Liu, Zijie Xing, and Yanming Shen*, “Motif-driven molecular graph representation learning,” <i>Expert Systems with Applications</i>, vol. 269, p. 126484, 2025'
 ---
 Abstract
 ======
