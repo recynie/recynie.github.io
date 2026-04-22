@@ -43,7 +43,7 @@ Research experience
 - Built a multi-agent system for protein optimization that evolves executable code blocks as an external expertise pool instead of tuning model parameters directly.
 - Used gating and evolutionary search to specialize different expertise blocks to different sub-distributions in the protein sequence space.
 - Introduced dense natural-language feedback from large language models as the fitness signal for code evolution.
-- The early version won the Best Creativity Award in the `玻尔+SciMaster AI4S 智能体开发竞赛`, reached the interview round of MiraclePlus (top 10%), and led to a co-first-author workshop paper at ICLR 2026 RSI.
+- The early version won the Best Exploration Award at the Bohrium + SciMaster AI4S Competition, reached the interview round of MiraclePlus (top 10%), and led to a co-first-author workshop paper at ICLR 2026 RSI.
 
 ### Dec. 2023 - Present
 
@@ -70,7 +70,7 @@ Publications
 
 Competitions and awards
 ======
-- 2025 National First Prize, `机械工程创新创意赛无损检测 AI 评片赛` (team leader)
+- 2025 National First Prize, Mechanical Engineering Innovation & Creativity Competition – AI-based Non-Destructive Testing Image Evaluation Track (team leader)
 - 2025 Third Prize, Northeast regional round, China Collegiate Computing Contest AIGC Innovation Competition
 - 2025 First Prize, Dalian University of Technology Information Security Competition (team leader)
 
