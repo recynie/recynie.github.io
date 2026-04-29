@@ -18,7 +18,8 @@ Education
 
 Academic performance
 ======
-- Weighted average: 92.3/100
+- Weighted average: 89.76/100
+- GPA: 3.98/5
 - Second-year academic rank: 4/63
 - Second-year comprehensive rank: 23/263
 - First four semesters academic rank: 14/63
