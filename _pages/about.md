@@ -24,6 +24,7 @@ Research Interests
 News
 ======
 
+- **May. 2026** Our paper [*KnowEvo: Knowledge Evolution for Protein Optimization*]({{ '/publication/KnowEvo' | relative_url }}) submitted to NeurIPS 2026 Conference.
 - **Mar. 2026** Our paper [*Language-guided expertise evolution for protein optimization*]({{ '/publication/language-guided-protein-optimization' | relative_url }}) was accepted as a poster at the ICLR 2026 Workshop on AI with Recursive Self-Improvement.
 - **Jan. 2026** I was invited by MiraclePlus (奇绩创坛) for an interview on protein optimization and ranked in the top 10%.
 - **Jun. 2025** I received First Prize in the Dalian University of Technology Information Security Competition.

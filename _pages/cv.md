@@ -44,7 +44,7 @@ Research experience
 - Built a multi-agent system for protein optimization that evolves executable code blocks as an external expertise pool instead of tuning model parameters directly.
 - Used gating and evolutionary search to specialize different expertise blocks to different sub-distributions in the protein sequence space.
 - Introduced dense natural-language feedback from large language models as the fitness signal for code evolution.
-- The early version won the Best Exploration Award at the Bohrium + SciMaster AI4S Competition, reached the interview round of MiraclePlus (top 10%), and led to a co-first-author workshop paper at ICLR 2026 RSI.
+- The early version won the Best Exploration Award at the Bohrium + SciMaster AI4S Competition, reached the interview round of MiraclePlus (top 10%), and led to a co-first-author workshop paper at ICLR 2026 RSI. 
 
 ### Dec. 2023 - Present
 
