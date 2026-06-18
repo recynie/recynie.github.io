@@ -8,18 +8,18 @@ redirect_from:
 ---
 
 I am an undergraduate student majoring in Artificial Intelligence at Dalian University of Technology, where I study in the School of Future Technology.
-My recent work is centered on AI for science, with a particular interest in protein optimization, molecular representation learning, and agent-driven research systems.
+My research interests center on **autonomous scientific discovery** and **self-improving agents**.
 
-I also write on my [personal blog](https://recynie.github.io/blog/) and maintain notes in my [personal wiki](https://metaphor-xennon.pages.dev/).
+I also write on my [personal blog](https://recynie.github.io/blog/).
+My [personal wiki](https://metaphor-xennon.pages.dev/) is actively maintained by agents.
 
 The [publications page]({{ '/publications/' | relative_url }}) shows details of works I evolved, and the [projects page]({{ '/portfolio/' | relative_url }}) shows my hobby projects and ongoing researches.
 
 Research Interests
 ======
 
-- Agent systems, AI scientist and agentic RL
-- AI for biology, especially protein optimization and embedding
-- Molecular representation learning for LLMs and graph neural networks
+- AI for scientific research: self-evolving agent, AI scientist and autonomous scientific research
+- AI for biology: protein optimization, structure embedding and protein hydration
 
 News
 ======
@@ -33,9 +33,10 @@ News
 Current Work
 ======
 
-- Protein optimization with language-guided expertise evolution
-- Protein hydration, crystallization-condition extraction, and hydration-guided protein design
-- Molecular representation learning for LLMs and graph neural networks
+- *(New)* AI for scientific research and self-improving LLMs/agents: Why agents perform badly on research tasks, and how to address this problem?
+- Knowledge evolution for protein optimization
+- Protein hydration analysis across mutations
+- Molecular representation learning for LLMs and GNNs
 
 For paper-level details, please see the [publications page]({{ '/publications/' | relative_url }}) or my [Google Scholar profile](https://scholar.google.com/citations?user=-9kSV0IAAAAJ&hl).
 
