@@ -3,6 +3,7 @@ title: "Protein crystallization condition prediction"
 excerpt: "A project on extracting structured crystallization conditions from PDB records and predicting key experimental variables from protein data."
 collection: portfolio
 permalink: /portfolio/protein-crystallization-condition-prediction/
+publish: false
 ---
 
 Protein crystallization records contain valuable experimental information, but much of it is buried in free-text descriptions in the Protein Data Bank. This project focuses on turning those noisy records into a structured resource for modeling crystallization conditions.

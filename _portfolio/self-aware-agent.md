@@ -3,7 +3,10 @@ title: "Self-Aware Agent: An agent who manages its own context"
 excerpt: "A research-oriented agent runtime that treats context as an explicit inventory with provenance, token costs, and inspectable selection policies."
 collection: portfolio
 permalink: /portfolio/self-aware-agent/
+public: true
 ---
+
+Repository: [self-aware-agent](https://github.com/recynie/self-aware-agent)
 
 Introduction
 =======
@@ -33,5 +36,3 @@ Roadmap
 The next step is to move from deterministic selection rules toward richer policies that can compare context items by utility, recency, and task relevance while still preserving traceability. A broader goal is to unify chat history, skills, retrieval outputs, tool specifications, and subagent handoff under the same context abstraction, so that these mechanisms are no longer treated as separate hacks but as parts of one coherent runtime design.
 
 In the longer term, this project connects to my broader interest in agentic research systems and AI scientist infrastructure, especially settings where reproducibility, controllability, and transparent reasoning matter more than maximizing raw autonomy.
-
-Repository: [self-aware-agent](https://github.com/recynie/self-aware-agent)

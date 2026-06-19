@@ -3,6 +3,7 @@ title: "Protein hydration embedding model"
 excerpt: "A project on learning hydration-aware protein representations and using them for downstream prediction and protein design."
 collection: portfolio
 permalink: /portfolio/protein-hydration-embedding-model/
+publish: false
 ---
 
 Protein hydration is a key factor for protein function. However, current protein embedding models and protein language models do not explicitly encode hydration information during training. This project asks a simple question: can hydration-aware protein representations improve downstream tasks?
