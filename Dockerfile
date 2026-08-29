@@ -1,5 +1,5 @@
 # Base image: Ruby version compatible with the locked Jekyll/Liquid stack
-FROM ruby:3.1
+FROM docker.io/library/ruby:3.1
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -22,7 +22,7 @@ RUN chown -R vscode:vscode /usr/src/app
 USER vscode
 
 # Copy Ruby dependency manifests so Bundler installs the locked versions
-COPY Gemfile Gemfile.lock ./
+COPY --chown=vscode:vscode Gemfile Gemfile.lock ./
 
 
 
