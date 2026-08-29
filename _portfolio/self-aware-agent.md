@@ -1,6 +1,6 @@
 ---
 title: "Self-Aware Agent: An agent who manages its own context"
-excerpt: "A research-oriented agent runtime that treats context as an explicit inventory with provenance, token costs, and inspectable selection policies."
+excerpt: "Self-aware agent (SAA) is an agent harness that treats context as an explicit inventory of *context items* (containing chat history, tool results, etc.), in which agents can build its own context through folding/unfolding/removing context items."
 collection: portfolio
 permalink: /portfolio/self-aware-agent/
 public: true
@@ -11,7 +11,7 @@ Repository: [self-aware-agent](https://github.com/recynie/self-aware-agent)
 Introduction
 =======
 
-Context pruning (compaction), skills, subagents, retrieval, memory... many familiar agent techniques are ultimately ways of managing context. In most current systems, this management happens **automatically**: some parts are handled by framework rules, while other parts are delegated to the model itself, such as dynamic pruning or deciding what context a subagent should inherit.
+There are plenty of tricks in an agent harness, context pruning (compaction), skills, subagents, retrieval, memory, etc. These familiar agent techniques are ultimately ways of managing context. In most current systems, this management happens **automatically**: some parts are handled by framework rules, while other parts are delegated to the model itself, such as dynamic pruning or deciding what context a subagent should inherit.
 
 An important shift in viewpoint is that many of these concepts can be treated simply as *context*:
 - Chat history: context pairs (user, assistant)
