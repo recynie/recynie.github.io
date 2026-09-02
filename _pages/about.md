@@ -12,7 +12,6 @@ My research interests center on **autonomous scientific discovery** and **recurs
 
 The [publications page]({{ '/publications/' | relative_url }}) shows details of works I evolved, and the [projects page]({{ '/portfolio/' | relative_url }}) shows my hobby projects and ongoing researches.
 I also write on my [personal blog](https://recynie.github.io/blog/).
-My [personal wiki](https://metaphor-xennon.pages.dev/) is actively maintained by agents.
 
 Research Interests
 ======
