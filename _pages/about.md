@@ -11,7 +11,7 @@ I am an undergraduate student majoring in Artificial Intelligence at [School of 
 My research interests center on **autonomous scientific discovery** and **recursive self-mprovement**.
 
 The [publications page]({{ '/publications/' | relative_url }}) shows details of works I evolved, and the [projects page]({{ '/portfolio/' | relative_url }}) shows my hobby projects and ongoing researches.
-I also write on my [personal blog](https://recynie.github.io/blog/).
+I also write on my [personal blog](https://yukiguni-xennon.pages.dev/).
 
 Research Interests
 ======
