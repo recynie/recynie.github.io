@@ -4,8 +4,8 @@ collection: publications
 category: manuscripts
 permalink: /publication/KnowEvo
 excerpt: 'KnowEvo turns experimental feedback into reusable, executable knowledge that evolves through repeated evaluation and revision for protein optimization.'
-date: 2026-05-07
-venue: 'NeurIPS 2026 (Under review)'
+date: 2026-09-24
+venue: 'NeurIPS 2026'
 slidesurl: 
 paperurl: 'https://recynie.github.io/files/KnowEvo.pdf'
 bibtexurl: 
