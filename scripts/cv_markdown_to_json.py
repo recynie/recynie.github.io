@@ -28,29 +28,14 @@ def parse_markdown_cv(md_file):
     # Remove YAML front matter
     content = re.sub(r'^---.*?---\s*', '', content, flags=re.DOTALL)
     
-    # Extract sections
-    sections = {}
-    current_section = None
-    section_content = []
-    
-    for line in content.split('\n'):
-        if re.match(r'^=+$', line):
-            continue
-        
-        section_match = re.match(r'^([A-Za-z\s]+)$', line.strip())
-        if section_match and len(line.strip()) > 0:
-            if current_section:
-                sections[current_section] = '\n'.join(section_content).strip()
-                section_content = []
-            current_section = section_match.group(1).strip()
-        elif current_section:
-            section_content.append(line)
-    
-    # Add the last section
-    if current_section and section_content:
-        sections[current_section] = '\n'.join(section_content).strip()
-    
-    return sections
+    # CV sections use setext headings; ordinary prose is not a heading.
+    headings = list(re.finditer(r'^([^\n]+)\n=+\s*$', content, re.MULTILINE))
+    return {
+        heading.group(1).strip(): content[heading.end():
+            headings[index + 1].start() if index + 1 < len(headings) else len(content)].strip()
+        for index, heading in enumerate(headings)
+    }
+
 
 def parse_config(config_file):
     """Parse the Jekyll _config.yml file for additional information."""
@@ -74,7 +59,7 @@ def extract_author_info(config):
             "address": "",
             "postalCode": "",
             "city": "",
-            "countryCode": "US",
+            "countryCode": "CN",
             "region": ""
         },
         "profiles": []
@@ -94,11 +79,12 @@ def extract_author_info(config):
         
         # Add location
         if author.get('location'):
-            author_info['location']['city'] = author.get('location', '')
+            author_info['location']['city'] = author.get('location', '').split(',')[0].strip()
+            author_info['location']['region'] = 'Liaoning'
         
         # Add employer as part of summary
         if author.get('employer'):
-            author_info['summary'] = f"Currently employed at {author.get('employer')}"
+            author_info['summary'] = f"Undergraduate in Artificial Intelligence at {author.get('employer')}"
         
         # Add bio to summary if available
         if author.get('bio'):
@@ -160,32 +146,47 @@ def extract_author_info(config):
 
 def parse_education(education_text):
     """Parse education section from markdown."""
-    education_entries = []
-    
-    # Extract education entries
-    entries = re.findall(r'\* (.*?)(?=\n\*|\Z)', education_text, re.DOTALL)
-    
-    for entry in entries:
-        # Parse degree, institution, and year
-        match = re.match(r'([^,]+), ([^,]+), (\d{4})(.*)', entry.strip())
-        if match:
-            degree, institution, year, additional = match.groups()
-            
-            # Extract GPA if available
-            gpa_match = re.search(r'GPA: ([\d\.]+)', additional)
-            gpa = gpa_match.group(1) if gpa_match else None
-            
-            education_entries.append({
-                "institution": institution.strip(),
-                "area": degree.strip(),
-                "studyType": "",
-                "startDate": "",
-                "endDate": year.strip(),
-                "gpa": gpa,
-                "courses": []
-            })
-    
-    return education_entries
+    lines = re.findall(r'^- (.+)$', education_text, re.MULTILINE)
+    institution, program = lines
+    match = re.fullmatch(r'Undergraduate in (.+), (\d{4})[–-](\d{4})', program)
+    area, start, end = match.groups()
+    return [{
+        "institution": institution,
+        "area": area,
+        "studyType": "Undergraduate",
+        "startDate": start,
+        "endDate": end,
+        "gpa": None,
+        "courses": []
+    }]
+
+
+def parse_research(research_text):
+    """Parse project headings, advisors, and contribution bullets."""
+    entries = []
+    months = {"Apr.": "04", "May": "05", "Oct.": "10", "Dec.": "12"}
+
+    def iso_month(value):
+        if value == "Present":
+            return ""
+        month, year = value.split()
+        return f"{year}-{months[month]}"
+
+    pattern = r'^\*\*(.+?)\*\* \((.+?) – (.+?)\)\n(.*?)(?=^\*\*[^\n]+?\*\* \(|\Z)'
+    for title, start, end, body in re.findall(pattern, research_text, re.MULTILINE | re.DOTALL):
+        advisor = re.search(r'\*\*Advisor:\*\* (.+)', body).group(1)
+        bullets = re.findall(r'^- (.+)$', body, re.MULTILINE)
+        entries.append({
+            "company": "Dalian University of Technology",
+            "position": title,
+            "website": "",
+            "startDate": iso_month(start),
+            "endDate": iso_month(end),
+            "summary": f"Advisor: {advisor}. {bullets[0]}",
+            "highlights": bullets[1:]
+        })
+    return entries
+
 
 def parse_work_experience(work_text):
     """Parse work experience section from markdown."""
@@ -270,12 +271,13 @@ def parse_publications(pub_dir):
                 "publisher": front_matter.get('venue', ''),
                 "releaseDate": front_matter.get('date', ''),
                 "website": front_matter.get('paperurl', ''),
-                "summary": front_matter.get('excerpt', '')
+                "summary": front_matter.get('excerpt', ''),
+                "citation": front_matter.get('citation', '')
             }
             
             publications.append(pub_entry)
     
-    return publications
+    return sorted(publications, key=lambda item: str(item['releaseDate']), reverse=True)
 
 def parse_talks(talks_dir):
     """Parse talks from the _talks directory."""
@@ -374,29 +376,56 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
     
     # Extract author information
     author_info = extract_author_info(config)
+    contact = Path(md_file).read_text(encoding='utf-8')
+    author_info['phone'] = re.search(r'\*\*Contact:\*\* .+? · (.+?) ·', contact).group(1)
     
     # Create the JSON structure
     cv_json = {
         "basics": author_info,
-        "work": parse_work_experience(sections.get('Work experience', '')),
+        "work": parse_research(sections['Research experience']),
         "education": parse_education(sections.get('Education', '')),
-        "skills": parse_skills(sections.get('Skills', '')),
+        "skills": [
+            {"name": name, "level": "", "keywords": keywords.split(', ')}
+            for name, keywords in re.findall(r'^- \*\*(.+?):\*\* (.+)$', sections['Skills'], re.MULTILINE)
+        ],
         "languages": [],
         "interests": [],
         "references": []
     }
     
+    # Academic results and English-language tests come from the current CV.
+    performance = sections['Academic performance']
+    cv_json['education'][0]['score'] = re.search(r'Academic score: (.+)', performance).group(1)
+    cv_json['education'][0]['highlights'] = re.findall(r'^- (.+academic rank: .+)$', performance, re.MULTILINE)
+    cv_json['education'][0]['courses'] = re.search(r'\*\*Selected coursework:\*\* (.+)', performance).group(1).split(', ')
+    cv_json['languages'] = [{"language": "English", "fluency": re.search(r'\*\*Language tests:\*\* (.+)', performance).group(1)}]
+    cv_json['interests'] = [
+        {"name": name, "keywords": [description]}
+        for name, description in re.findall(r'^- \*\*(.+?):\*\* (.+)$', sections['Research interests'], re.MULTILINE)
+    ]
+    cv_json['awards'] = [
+        {"title": item, "date": "", "awarder": "", "summary": ""}
+        for item in re.findall(r'^- (.+)$', sections['Scholarships'], re.MULTILINE)
+    ]
+    for month, year, description in re.findall(r'^- \*\*(\w+)\. (\d{4}):\*\* (.+)$', sections['Competitions and awards'], re.MULTILINE):
+        title, summary = description.split('. ', 1)
+        cv_json['awards'].append({"title": title, "date": f"{year}-{'09' if month == 'Sep' else '06'}", "awarder": "", "summary": summary})
+
     # Add publications
     cv_json["publications"] = parse_publications(os.path.join(repo_root, "_publications"))
     
     # Add talks
-    cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks"))
+    cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks")) if 'Presentations' in sections else []
     
     # Add teaching
-    cv_json["teaching"] = parse_teaching(os.path.join(repo_root, "_teaching"))
+    cv_json["teaching"] = parse_teaching(os.path.join(repo_root, "_teaching")) if 'Teaching' in sections else []
     
     # Add portfolio
-    cv_json["portfolio"] = parse_portfolio(os.path.join(repo_root, "_portfolio"))
+    project_paths = re.findall(r"'/portfolio/([^']+)'", sections['Personal projects'])
+    cv_json["portfolio"] = [
+        item for item in parse_portfolio(os.path.join(repo_root, "_portfolio"))
+        if item['url'] in [f"/portfolio/{path}" for path in project_paths]
+    ]
     
     # Extract languages and interests from config if available
     if 'languages' in config:
@@ -407,7 +436,8 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
     
     # Write the JSON to a file
     with open(output_file, 'w', encoding='utf-8') as file:
-        json.dump(cv_json, file, indent=2, cls=DateTimeEncoder)
+        json.dump(cv_json, file, indent=2, ensure_ascii=False, cls=DateTimeEncoder)
+        file.write('\n')
     
     print(f"Successfully converted {md_file} to {output_file}")
 

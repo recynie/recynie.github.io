@@ -1,152 +1,221 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Xingyue Liu",
+    "email": "aroma@mail.dlut.edu.cn",
+    "phone": "+86 15842668147",
+    "website": "https://recynie.github.io",
+    "summary": "Undergraduate in Artificial Intelligence at Dalian University of Technology. Undergraduate researcher in artificial intelligence",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Dalian",
+      "countryCode": "CN",
+      "region": "Liaoning"
     },
     "profiles": [
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=-9kSV0IAAAAJ&hl"
       },
       {
         "network": "ORCID",
         "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0009-0007-3321-5373"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "recynie",
+        "url": "https://github.com/recynie"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Dalian University of Technology",
+      "position": "Language-guided expertise evolution for protein optimization",
+      "website": "",
+      "startDate": "2025-04",
+      "endDate": "2026-05",
+      "summary": "Advisor: Prof. Yanming Shen. Developed a self-evolving agent system for protein optimization through explore–verify–refine cycles, accumulating executable prior knowledge in a code-based knowledge base.",
+      "highlights": [
+        "Represented knowledge as a code population, with gating mechanisms to match and optimize target protein sub-distributions.",
+        "Used Thompson sampling during training and lower confidence bound (LCB) scoring for final knowledge selection to balance exploration and exploitation.",
+        "Built an agent workspace containing parent-node strategies, validation results, and metrics to support feedback-driven exploration and analysis.",
+        "Built a high-concurrency agent system from scratch, decoupling exploration from knowledge updates and supporting multiple servers for efficient resource use.",
+        "An early version won the Best Innovation Award at the Bohr + SciMaster AI4S Agent Development Competition (only two teams awarded) and reached the MiraclePlus startup camp interview round (top 10%). This work led to co-first-author papers accepted at ICLR 2026 RSI Workshop and NeurIPS 2026."
+      ]
+    },
+    {
+      "company": "Dalian University of Technology",
+      "position": "Molecular representation learning",
+      "website": "",
+      "startDate": "2024-10",
+      "endDate": "2024-12",
+      "summary": "Advisor: Prof. Yanming Shen. Integrated molecular motifs into GNNs and LLMs to improve representation learning beyond the limits of 1-WL testing and one-dimensional SMILES representations.",
+      "highlights": [
+        "For Uni-Motif, designed and evaluated three substructure feature fusion mechanisms and compared motif decomposition strategies.",
+        "For S<sup>2</sup>Token, proposed and evaluated substructure-aware tokenization and reproduced leading baselines to validate motif-augmented performance gains.",
+        "Co-authored papers published in *Expert Systems with Applications* and *Information Processing & Management*."
+      ]
+    },
+    {
+      "company": "Dalian University of Technology",
+      "position": "Protein hydration and crystallization condition prediction",
+      "website": "",
+      "startDate": "2023-12",
+      "endDate": "",
+      "summary": "Advisor: Prof. Song Xue. Modeled relationships among protein sequences, structures, and chemical environments to predict crystallization conditions.",
+      "highlights": [
+        "Built a crystallization condition database of roughly 7,000 proteins by extracting, filtering, and integrating records from the Protein Data Bank.",
+        "Used Foldseek to cluster structurally similar proteins and analyze solution-component combinations and crystallization condition distributions.",
+        "Fine-tuned SaProt, a pretrained structure-aware protein language model, on the crystallization condition task.",
+        "Found that protein language models struggle to represent crystallization conditions. Current work adds hydration as a downstream modality and develops hydration-aware protein representations."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "Dalian University of Technology, School of Future Technology",
+      "area": "Artificial Intelligence",
+      "studyType": "Undergraduate",
+      "startDate": "2023",
+      "endDate": "2027",
       "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
+      "courses": [
+        "Probability and Statistics (96)",
+        "Deep Learning (96)",
+        "Programming for Artificial Intelligence (92)"
+      ],
+      "score": "87.0/100",
+      "highlights": [
+        "First five semesters academic rank: 13/64",
+        "Second-year academic rank: 4/64"
+      ]
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
+  "skills": [
+    {
+      "name": "AI agents",
+      "level": "",
+      "keywords": [
+        "Self-evolving agents",
+        "agent harness design"
+      ]
+    },
+    {
+      "name": "AI for Science",
+      "level": "",
+      "keywords": [
+        "Protein representation learning",
+        "molecular representation learning",
+        "protein optimization"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "CET-4 (618), CET-6 (591)"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Autonomous scientific research",
+      "keywords": [
+        "Improve AI's long-horizon research ability through iterative idea development with experimental feedback to propose valuable, feasible ideas."
+      ]
+    },
+    {
+      "name": "Protein representation",
+      "keywords": [
+        "Develop structure-aware and hydration-aware protein representations to improve downstream task performance."
+      ]
+    }
+  ],
   "references": [],
+  "awards": [
+    {
+      "title": "National Scholarship, 2024–2025",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Academic Excellence Scholarship, 2024–2025",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "Academic Excellence Scholarship, 2023–2024",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    },
+    {
+      "title": "National First Prize, Mechanical Engineering Innovation & Creativity Competition – AI-based Non-Destructive Testing Image Evaluation Track (team leader)",
+      "date": "2025-09",
+      "awarder": "",
+      "summary": "Detected weld defects in X-ray images; handled data preprocessing, model deployment, and fine-tuning of YOLOv8, RT-DETR, and DEIM."
+    },
+    {
+      "title": "First Prize, Dalian University of Technology Information Security Competition (team leader)",
+      "date": "2025-06",
+      "awarder": "",
+      "summary": "Designed a benchmark and testing platform for LLM text watermark attacks; proposed the project direction, built the code framework, and reproduced paraphrasing attacks. The team reproduced five attack papers."
+    }
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "KnowEvo: Knowledge Evolution for Protein Optimization",
+      "publisher": "NeurIPS 2026",
+      "releaseDate": "2026-09-24",
+      "website": "https://recynie.github.io/files/KnowEvo.pdf",
+      "summary": "KnowEvo turns experimental feedback into reusable, executable knowledge that evolves through repeated evaluation and revision for protein optimization.",
+      "citation": null
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "From Graphs to Tokens: Substructure-Aware Molecular Representation for Large Language Models",
+      "publisher": "Information Processing & Management",
+      "releaseDate": "2026-03-28",
+      "website": "https://recynie.github.io/files/from-graphs-to-tokens.pdf",
+      "summary": "S<sup>2</sup>Token treats chemically meaningful molecular substructures as tokens, improving both representativeness and generalization for molecular large language models.",
+      "citation": "Runze Wang, Zijie Xing, Xingyue Liu, Mingqi Yang, Che He, Yanming Shen*, “From Graphs to Tokens: Substructure-Aware Molecular Representation for Large Language Models,” <i>Information Processing and Management</i>, vol. 63, no. 6, p. 104771, Sep. 2026"
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "Language-guided expertise evolution for protein optimization",
+      "publisher": "ICLR 2026 Workshop on AI with Recursive Self-Improvement",
+      "releaseDate": "2026-03-05",
+      "website": "https://recynie.github.io/files/language-guided-expertise-evolution-for-protein-optimization.pdf",
+      "summary": "This work reframes protein optimization as evolving an explicit expertise pool, using language-guided multi-agent feedback instead of parameter-heavy reinforcement learning.",
+      "citation": "Xingyue Liu†, Zijie Xing†, Runze Wang, Luoming Hu, and Yanming Shen*, “Language-guided expertise evolution for protein optimization,” <i>ICLR 2026 Workshop on AI with Recursive Self-Improvement</i>, 2026"
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "Motif-driven molecular graph representation learning",
+      "publisher": "Expert Systems with Applications",
+      "releaseDate": "2025-01-16",
+      "website": "https://recynie.github.io/files/motif-driven-molecular-graph-representation-learning.pdf",
+      "summary": "Uni-Motif integrates molecular motifs into GNNs through decoupled functional and structural encodings, improving expressiveness across different architectures.",
+      "citation": "Runze Wang, Yuting Ma, Xingyue Liu, Zijie Xing, and Yanming Shen*, “Motif-driven molecular graph representation learning,” <i>Expert Systems with Applications</i>, vol. 269, p. 126484, 2025"
     }
   ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
+  "presentations": [],
+  "teaching": [],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
+      "name": "pi-goal: `/goal` extention for pi coding agent",
       "category": "portfolio",
       "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "url": "/portfolio/pi-goal/",
+      "description": "`/goal` extention for practical usage, featuring (1) interactive clarification with user before goal proposal and (2) independent verification after goal completion."
+    },
+    {
+      "name": "Self-Aware Agent: An agent who manages its own context",
+      "category": "portfolio",
+      "date": "",
+      "url": "/portfolio/self-aware-agent/",
+      "description": "Self-aware agent (SAA) is an agent harness that treats context as an explicit inventory of *context items* (containing chat history, tool results, etc.), in which agents can build its own context through folding/unfolding/removing context items."
     }
   ]
 }

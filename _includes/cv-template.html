@@ -77,10 +77,16 @@
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ education.area }}</div>
-          <div class="cv-item-date">{{ education.endDate }}</div>
+          <div class="cv-item-date">{{ education.startDate }} – {{ education.endDate }}</div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ education.institution }}</div>
+          {% if education.score %}
+          <div class="cv-item-detail">Academic score: {{ education.score }}</div>
+          {% endif %}
+          {% for highlight in education.highlights %}
+          <div class="cv-item-detail">{{ highlight }}</div>
+          {% endfor %}
           {% if education.gpa %}
           <div class="cv-item-detail">GPA: {{ education.gpa }}</div>
           {% endif %}
@@ -99,13 +105,13 @@
   {% if cv.work.size > 0 %}
   <!-- Work Experience -->
   <div class="cv-section">
-    <h2>Work Experience</h2>
+    <h2>Research Experience</h2>
     <ul class="cv-list">
       {% for work in cv.work %}
       <li class="cv-item">
         <div class="cv-item-header">
           <div class="cv-item-title">{{ work.position }}</div>
-          <div class="cv-item-date">{{ work.startDate }}{% if work.endDate %} - {{ work.endDate }}{% endif %}</div>
+          <div class="cv-item-date">{{ work.startDate }} – {% if work.endDate != empty %}{{ work.endDate }}{% else %}Present{% endif %}</div>
         </div>
         <div class="cv-item-content">
           <div class="cv-item-subtitle">{{ work.company }}</div>
@@ -289,6 +295,25 @@
   </div>
   {% endif %}
   
+  {% if cv.awards.size > 0 %}
+  <div class="cv-section">
+    <h2>Awards &amp; Scholarships</h2>
+    <ul class="cv-list">
+      {% for award in cv.awards %}
+      <li class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-item-title">{{ award.title }}</div>
+          <div class="cv-item-date">{{ award.date }}</div>
+        </div>
+        {% if award.summary != empty %}
+        <div class="cv-item-detail">{{ award.summary }}</div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
   {% if cv.references.size > 0 %}
   <!-- References -->
   <div class="cv-section">
